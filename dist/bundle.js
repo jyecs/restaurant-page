@@ -1,0 +1,1 @@
+document.querySelector("#content").appendChild(((...e)=>{const t=(()=>{const e=document.createElement("div");return e.classList.add("container"),e.classList.add("padding-10x"),e})();return e.forEach((e=>{const n=document.createElement("p");n.classList.add("text-content"),n.innerHTML=e,t.appendChild(n)})),t})("hello","goodbye","yes!"));
