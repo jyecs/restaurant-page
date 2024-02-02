@@ -1,3 +1,5 @@
+import "./style.css";
+import { test, newDiv } from "./newscript";
 const buildContainer = () => {
     const element = document.createElement("div");
     element.classList.add("container");
@@ -5,7 +7,7 @@ const buildContainer = () => {
     return element;
 };
 
-const buildContent = (...content) => {
+const buildGenericContent = (...content) => {
     const container = buildContainer();
     content.forEach(text => {
         const p = document.createElement("p");
@@ -17,6 +19,16 @@ const buildContent = (...content) => {
     return container;
 }
 
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button => {
+    button.addEventListener("click", () =>{
+        console.log("clicked");
+    });
+});
 
 let contentDiv = document.querySelector("#content");
-contentDiv.appendChild(buildContent("hello", "goodbye", "yes!"));
+const content1 = buildGenericContent("test1", "test2", "test3");
+const content2 = buildGenericContent("hello", "goodbye", "yes!");
+test();
+contentDiv.replaceChildren(content1,content2);
+contentDiv.appendChild(newDiv())
